@@ -1,5 +1,3 @@
-// Exemplo de código para testar o analisador semântico
-
 int soma(int a, int b) {
     // Função que soma dois números
     return a + b;
