@@ -1,5 +1,4 @@
-import re
-
+import re  
 class Token:
     def __init__(self, tipo, valor, linha, coluna):
         self.tipo = tipo
@@ -19,14 +18,15 @@ class AnalisadorLexico:
             ('OPERADOR_SOMA', r'\+'),
             ('OPERADOR_SUB', r'-'),
             ('OPERADOR_MUL', r'\*'),
-            ('OPERADOR_DIV', r'/'),
+            ('OPERADOR_DIV', r'/'),  # Adicionado operador de divisão
             ('OPERADOR_ATRIB', r'='),
             ('DELIM_AP', r'\('),
             ('DELIM_FP', r'\)'),
             ('DELIM_AC', r'\{'),
             ('DELIM_FC', r'\}'),
+            ('VIRGULA', r','),  # Adicionado vírgula
             ('PONTO_VIRGULA', r';'),
-            ('ESPACO', r'\s+'),  # Espacos, tabs, quebras de linha
+            ('ESPACO', r'\s+'),  
             ('COMENTARIO', r'//.*|/\*[\s\S]*?\*/'),
         ]
         self.regex = '|'.join('(?P<%s>%s)' % (nome, padrao) for nome, padrao in self.padroes)

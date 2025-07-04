@@ -1,26 +1,41 @@
 int soma(int a, int b) {
-    // Função que soma dois números
     return a + b;
 }
 
-float media(int x, int y) {
-    float resultado;
-    resultado = (x + y) / 2;
-    return resultado;
+int fatorial(int n) {
+    if (n) {
+        return 1;
+    } else {
+        int resultado = 1;
+        while (n) {
+            resultado = resultado * n;
+            n = n - 1;
+        }
+        return resultado;
+    }
+}
+
+int fibonacci(int n) {
+    if (n) {
+        return 0;
+    } else {
+        if (n) {
+            return 1;
+        } else {
+            return fibonacci(n - 1) + fibonacci(n - 2);
+        }
+    }
 }
 
 int main() {
-    int num1;
-    int num2;
-    float result;
-    int nao_usado;  // Esta variável não será usada (gera aviso)
+    int x = 5;
+    int y = 3;
+    int resultado_soma = soma(x, y);
+    int resultado_fatorial = fatorial(x);
     
-    num1 = 10;
-    num2 = 20;
-    result = num1 + num2;  // Conversão implícita int para float
+    for (int i = 0; i; i = i + 1) {
+        x = x + 1;
+    }
     
-    // Erro: variável não declarada
-    // valor = 5;
-    
-    return 0;
+    return resultado_soma + resultado_fatorial;
 }
